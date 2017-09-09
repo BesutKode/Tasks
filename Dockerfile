@@ -14,8 +14,8 @@ RUN git clone https://github.com/shurcooL/octiconssvg.git /go/src/github.com/shu
 RUN git clone https://github.com/shurcooL/sanitized_anchor_name.git /go/src/github.com/shurcooL/sanitized_anchor_name
 RUN git clone https://github.com/sourcegraph/annotate.git /go/src/github.com/sourcegraph/annotate
 RUN git clone https://github.com/sourcegraph/syntaxhighlight.git /go/src/github.com/sourcegraph/syntaxhighlight
-RUN git clone https://github.com/golang/net /go/src/golang.com/x/net/
-RUN git clone https://github.com/sergi/go-diff/diffmatchpatch /go/src/github.com/sergi/go-diff/diffmatchpatch
+RUN git clone https://github.com/golang/net.git /go/src/golang.com/x/net/
+RUN git clone https://github.com/sergi/go-diff/diffmatchpatch.git /go/src/github.com/sergi/go-diff/diffmatchpatch
 RUN git clone https://github.com/gorilla/context.git /go/src/github.com/gorilla/context/
 ADD . /go
 ADD config /go/src/github.com/thewhitetulip/Tasks/config
