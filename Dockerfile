@@ -14,9 +14,7 @@ RUN git clone https://github.com/shurcooL/octiconssvg.git /go/src/github.com/shu
 RUN git clone https://github.com/shurcooL/sanitized_anchor_name.git /go/src/github.com/shurcooL/sanitized_anchor_name
 RUN git clone https://github.com/sourcegraph/annotate.git /go/src/github.com/sourcegraph/annotate
 RUN git clone https://github.com/sourcegraph/syntaxhighlight.git /go/src/github.com/sourcegraph/syntaxhighlight
-RUN git clone https://golang.org/x/net/context.git /go/src/golang.org/x/net/context
-RUN git clone https://golang.org/x/net/html.git /go/src/golang.org/x/net/html
-RUN git clone https://golang.org/x/net/html/atom.git /go/src/golang.org/x/net/html/atom
+RUN git clone https://github.com/golang/net /go/src/golang.com/net/
 ADD . /go
 ADD config /go/src/github.com/thewhitetulip/Tasks/config
 ADD views /go/src/github.com/thewhitetulip/Tasks/views
