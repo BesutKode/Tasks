@@ -6,12 +6,11 @@ services:
 
 env:
   global:
-    - IMAGE_NAME=coala-docker:this
+    - IMAGE_NAME=tasks:this
 
 before_install:
-  - go build 
-  - cat schema.sql | sqlite3 tasks.db
-
+  - brew install hadolint
+  - hadolint Dockerfile
 install:
   - hooks/build
 
