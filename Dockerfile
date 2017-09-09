@@ -15,7 +15,7 @@ RUN git clone https://github.com/shurcooL/sanitized_anchor_name.git /go/src/gith
 RUN git clone https://github.com/sourcegraph/annotate.git /go/src/github.com/sourcegraph/annotate
 RUN git clone https://github.com/sourcegraph/syntaxhighlight.git /go/src/github.com/sourcegraph/syntaxhighlight
 RUN git clone https://github.com/golang/net.git net
-ADD net/html/ /go/src/golang.com/x/net/html/
+ADD net /go/src/golang.com/x/net/
 RUN git clone https://github.com/sergi/go-diff.git /go/src/github.com/sergi/go-diff/
 RUN git clone https://github.com/gorilla/context.git /go/src/github.com/gorilla/context/
 ADD . /go
