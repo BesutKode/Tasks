@@ -1,2 +1,2 @@
-FROM ubuntu:14.04
+FROM golang:latest
 RUN go bulid
