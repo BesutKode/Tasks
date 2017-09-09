@@ -1,7 +1,8 @@
 FROM golang:latest
 RUN apt update && apt install -y \
 git
-RUN curl https://github.com/gruntwork-io/fetch/releases/download/v0.1.1/fetch_linux_386 -o fetch && chmod -x fetch
+RUN curl https://github.com/gruntwork-io/fetch/releases/download/v0.1.1/fetch_linux_386 -o fetch 
+RUN chmod -x fetch
 RUN git clone https://github.com/gorilla/sessions.git /go/src/github.com/gorilla/sessions
 RUN git clone https://github.com/dgrijalva/jwt-go.git /go/src/github.com/dgrijalva/jwt-go
 RUN git clone https://github.com/mattn/go-sqlite3 /go/src/github.com/mattn/go-sqlite3
