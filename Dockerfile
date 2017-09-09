@@ -1,8 +1,7 @@
 FROM golang:latest
 RUN apt update && apt install -y \
-git
-RUN curl https://github.com/gruntwork-io/fetch/releases/download/v0.1.1/fetch_linux_386 -o fetch 
-RUN chmod -x fetch
+git \
+svn
 RUN git clone https://github.com/gorilla/sessions.git /go/src/github.com/gorilla/sessions
 RUN git clone https://github.com/dgrijalva/jwt-go.git /go/src/github.com/dgrijalva/jwt-go
 RUN git clone https://github.com/mattn/go-sqlite3 /go/src/github.com/mattn/go-sqlite3
@@ -16,7 +15,7 @@ RUN git clone https://github.com/shurcooL/octiconssvg.git /go/src/github.com/shu
 RUN git clone https://github.com/shurcooL/sanitized_anchor_name.git /go/src/github.com/shurcooL/sanitized_anchor_name
 RUN git clone https://github.com/sourcegraph/annotate.git /go/src/github.com/sourcegraph/annotate
 RUN git clone https://github.com/sourcegraph/syntaxhighlight.git /go/src/github.com/sourcegraph/syntaxhighlight
-RUN ./fetch --repo="https://github.com/golang/net"  --source-path="/html" /golang.org/x/net/html/
+RUN svn checkout https://github.com/golang/net/trunk/html /go/src/golang.org/x/net/html/
 RUN git clone https://github.com/sergi/go-diff.git /go/src/github.com/sergi/go-diff/
 RUN git clone https://github.com/gorilla/context.git /go/src/github.com/gorilla/context/
 ADD . /go
