@@ -11,5 +11,6 @@ ADD types $TASKS_DIR
 ADD sessions $TASKS_DIR
 ADD db $TASKS_DIR
 WORKDIR /go
-RUN go build
+#RUN go build
+RUN go install
 RUN cat schema.sql | sqlite3 tasks.db
