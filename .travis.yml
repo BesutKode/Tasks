@@ -1,0 +1,20 @@
+sudo: required
+language: go
+
+services:
+  - docker
+
+env:
+  global:
+    - IMAGE_NAME=coala-docker:this
+
+before_install:
+  - go build 
+  - cat schema.sql | sqlite3 tasks.db
+
+install:
+  - hooks/build
+
+script:
+  - docker images
+  - hooks/test
