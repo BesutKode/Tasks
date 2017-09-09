@@ -10,7 +10,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/thewhitetulip/Tasks/config"
+	"github.com/thewhitetulip/Tasks/config/config.go"
 	"github.com/thewhitetulip/Tasks/views"
 )
 
