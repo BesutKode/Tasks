@@ -1,3 +1,3 @@
 FROM golang:latest
-RUN go bulid
+RUN go build
 RUN cat schema.sql | sqlite3 tasks.db
