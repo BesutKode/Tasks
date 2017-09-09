@@ -7,8 +7,8 @@ ADD config /usr/local/go/src/github.com/thewhitetulip/Tasks/
 ADD views /usr/local/go/src/github.com/thewhitetulip/Tasks/
 ADD utils /usr/local/go/src/github.com/thewhitetulip/Tasks/
 ADD types /usr/local/go/src/github.com/thewhitetulip/Tasks/
-ADD sessions $TASKS_DIR
-ADD db $TASKS_DIR
+ADD sessions /usr/local/go/src/github.com/thewhitetulip/Tasks/
+ADD db /usr/local/go/src/github.com/thewhitetulip/Tasks/
 WORKDIR /go
 #RUN go build
 RUN go install
