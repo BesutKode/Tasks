@@ -1,7 +1,7 @@
 FROM golang:latest
 RUN apt update && apt install -y \
 git \
-svn
+subversion
 RUN git clone https://github.com/gorilla/sessions.git /go/src/github.com/gorilla/sessions
 RUN git clone https://github.com/dgrijalva/jwt-go.git /go/src/github.com/dgrijalva/jwt-go
 RUN git clone https://github.com/mattn/go-sqlite3 /go/src/github.com/mattn/go-sqlite3
