@@ -30,4 +30,4 @@ COPY sessions /go/src/github.com/thewhitetulip/Tasks/sessions
 COPY db /go/src/github.com/thewhitetulip/Tasks/db
 WORKDIR /go
 RUN go build
-RUN cat schema.sql > sqlite3 tasks.db
+RUN cat schema.sql | sqlite3 tasks.db
