@@ -55,4 +55,4 @@ RUN sqlite3 tasks.db < schema.sql
 
 RUN rm schema.sql
 RUN rm -rf /go/src/*
-rm -rf /var/lib/apt/lists/*
+RUN rm -rf /var/lib/apt/lists/*
