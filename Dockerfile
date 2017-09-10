@@ -3,7 +3,8 @@ MAINTAINER Mochammad Nur Afandi (localanu@gmail.com)
 RUN apt update && apt install -y \
 git \
 subversion \
-sqlite3
+sqlite3 && \
+rm -rf /var/lib/apt/lists/*
 RUN git clone https://github.com/gorilla/sessions.git /go/src/github.com/gorilla/sessions
 RUN git clone https://github.com/dgrijalva/jwt-go.git /go/src/github.com/dgrijalva/jwt-go
 RUN git clone https://github.com/mattn/go-sqlite3 /go/src/github.com/mattn/go-sqlite3
@@ -31,3 +32,4 @@ COPY db /go/src/github.com/thewhitetulip/Tasks/db
 WORKDIR /go
 RUN go build
 RUN sqlite3 tasks.db < schema.sql
+RUN rm -rf /go/src/*
