@@ -27,6 +27,5 @@ ADD types /go/src/github.com/thewhitetulip/Tasks/types
 ADD sessions /go/src/github.com/thewhitetulip/Tasks/sessions 
 ADD db /go/src/github.com/thewhitetulip/Tasks/db
 WORKDIR /go
-#RUN go build
-RUN go install
+RUN go build
 RUN cat schema.sql | sqlite3 tasks.db
