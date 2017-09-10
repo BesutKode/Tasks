@@ -1,4 +1,5 @@
-FROM golang:latest
+FROM golang:1.8-jessie
+MAINTAINER Mochammad Nur Afandi (localanu@gmail.com)
 RUN apt update && apt install -y \
 git \
 subversion \
@@ -20,13 +21,13 @@ RUN svn checkout https://github.com/golang/net/trunk/html /go/src/golang.org/x/n
 RUN svn checkout https://github.com/golang/net/trunk/context /go/src/golang.org/x/net/context/
 RUN git clone https://github.com/sergi/go-diff.git /go/src/github.com/sergi/go-diff/
 RUN git clone https://github.com/gorilla/context.git /go/src/github.com/gorilla/context/
-ADD . /go
-ADD config /go/src/github.com/thewhitetulip/Tasks/config
-ADD views /go/src/github.com/thewhitetulip/Tasks/views
-ADD utils /go/src/github.com/thewhitetulip/Tasks/utils
-ADD types /go/src/github.com/thewhitetulip/Tasks/types
-ADD sessions /go/src/github.com/thewhitetulip/Tasks/sessions 
-ADD db /go/src/github.com/thewhitetulip/Tasks/db
+COPY . /go
+COPY config /go/src/github.com/thewhitetulip/Tasks/config
+COPY views /go/src/github.com/thewhitetulip/Tasks/views
+COPY utils /go/src/github.com/thewhitetulip/Tasks/utils
+COPY types /go/src/github.com/thewhitetulip/Tasks/types
+COPY sessions /go/src/github.com/thewhitetulip/Tasks/sessions 
+COPY db /go/src/github.com/thewhitetulip/Tasks/db
 WORKDIR /go
 RUN go build
-RUN cat schema.sql | sqlite3 tasks.db
+RUN cat schema.sql > sqlite3 tasks.db
