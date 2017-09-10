@@ -22,7 +22,12 @@ RUN svn checkout https://github.com/golang/net/trunk/html /go/src/golang.org/x/n
 RUN svn checkout https://github.com/golang/net/trunk/context /go/src/golang.org/x/net/context/
 RUN git clone https://github.com/sergi/go-diff.git /go/src/github.com/sergi/go-diff/
 RUN git clone https://github.com/gorilla/context.git /go/src/github.com/gorilla/context/
-COPY . /go
+COPY main.go /go
+COPY config.json /go
+COPY templates /go
+COPY public /go
+COPY files /go
+COPY client /go
 COPY config /go/src/github.com/thewhitetulip/Tasks/config
 COPY views /go/src/github.com/thewhitetulip/Tasks/views
 COPY utils /go/src/github.com/thewhitetulip/Tasks/utils
