@@ -7,7 +7,7 @@ WORKDIR /go/src/app
 COPY . .
 RUN go-wrapper download 
 RUN go-wrapper install 
-RUN sed -i 's/ANU/$PORT_T/g' config.json
+RUN sed -i "s/ANU/$PORT_T/g" config.json
 RUN sqlite3 tasks.db < schema.sql
 
 CMD ["go-wrapper", "run"] 
