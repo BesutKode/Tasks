@@ -1,6 +1,7 @@
 FROM golang:1.8-jessie
 MAINTAINER Mochammad Nur Afandi (localanu@gmail.com)
 ENV PORT_T 8081
+EXPOSE $PORT_T
 RUN apt update && apt install -y sqlite3
 
 WORKDIR /go/src/app
